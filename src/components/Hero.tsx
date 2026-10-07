@@ -1,70 +1,65 @@
-import React from "react";
-import Link from "next/link";
-import { TimetablePreview } from "./TimetablePreview";
-import { ArrowRight, ArrowUpRight, Calendar, Sparkles } from "lucide-react";
+import React from 'react'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
+import { btn } from '@/lib/ui'
+import { TimetablePreview } from './TimetablePreview'
+
+const SCOPE = [
+  'Faculty workload',
+  'Timetable generation',
+  'Constraint management',
+  'Conflict detection',
+]
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative pt-12 pb-20 sm:pt-16 sm:pb-28 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200/60">
-      {/* Background grid accent (subtle, restrained) */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "radial-gradient(#1e3a8a 1px, transparent 1px), radial-gradient(#1e3a8a 1px, #f8fafc 1px)",
-          backgroundSize: "24px 24px",
-          backgroundPosition: "0 0, 12px 12px",
-        }}
-        aria-hidden="true"
-      />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Subhead Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs sm:text-sm font-medium bg-blue-50 text-blue-800 border border-blue-200/80 mb-6 shadow-2xs">
-          <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-          <span>Higher Education Timetable & Workload Planning</span>
-          <span className="text-slate-400">•</span>
-          <span className="text-blue-900 font-semibold">Early Access 2026</span>
+    <section className="border-b border-line bg-page">
+      <div className="mx-auto grid w-full max-w-[1200px] gap-12 px-5 pb-16 pt-12 sm:px-8 sm:pt-16 lg:grid-cols-12 lg:items-center lg:gap-12 lg:pb-24 lg:pt-24">
+        <div className="lg:col-span-5">
+          <p className="text-[13px] font-medium text-brand">
+            Academic scheduling and faculty workload software
+          </p>
+          <h1 className="mt-5 text-balance text-[38px] font-semibold leading-[1.06] tracking-[-0.03em] text-ink sm:text-5xl lg:text-[46px] xl:text-[50px]">
+            Academic scheduling software built around your institution.
+          </h1>
+          <p className="mt-6 max-w-[34rem] text-[17px] leading-[1.65] text-body lg:text-[18px]">
+            Schedence generates timetables and manages faculty workloads against
+            your institution&apos;s own rules, including availability, room
+            constraints and designation load reductions. Conflicts are flagged
+            before a schedule is published.
+          </p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <Link href="#contact" className={btn('primary')}>
+              Request a demo
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+            <Link href="#workflow" className={btn('secondary')}>
+              See how it works
+            </Link>
+          </div>
+          <p className="mt-6 text-[13px] text-muted">
+            Each institution is deployed separately and privately.
+          </p>
         </div>
 
-        {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight max-w-4xl mx-auto leading-[1.12]">
-          Academic scheduling without the{" "}
-          <span className="text-blue-700 underline decoration-blue-200 underline-offset-4 decoration-2">
-            spreadsheet chaos
-          </span>
-          .
-        </h1>
-
-        {/* Supporting text */}
-        <p className="mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-          Schedence helps colleges and universities build conflict-aware faculty schedules, balance teaching workloads, manage room constraints, and make complex scheduling decisions easier to understand.
-        </p>
-
-        {/* Action Buttons */}
-        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
-          <a
-            href="#product"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-blue-700 hover:bg-blue-800 rounded-xl shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
-          >
-            <span>Explore Schedence</span>
-            <ArrowRight className="w-4 h-4" aria-hidden="true" />
-          </a>
-
-          <a
-            href="mailto:echo@schedence.xyz?subject=Schedence%20Early%20Access"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-slate-800 bg-white hover:bg-slate-100 hover:text-blue-700 border border-slate-300 rounded-xl shadow-2xs transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
-          >
-            <span>Join Early Access</span>
-            <ArrowUpRight className="w-4 h-4 opacity-70" aria-hidden="true" />
-          </a>
-        </div>
-
-        {/* Illustrative Timetable / Workload Visual */}
-        <div className="mt-14 sm:mt-18">
+        <div className="lg:col-span-7">
           <TimetablePreview />
         </div>
       </div>
+
+      <div className="border-t border-line bg-surface">
+        <ul className="mx-auto grid w-full max-w-[1200px] grid-cols-2 gap-x-6 gap-y-3 px-5 py-5 sm:px-8 lg:grid-cols-4">
+          {SCOPE.map((item) => (
+            <li
+              key={item}
+              className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.08em] text-muted"
+            >
+              <span className="h-1.5 w-1.5 rounded-[1px] bg-brand/60" aria-hidden />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
-  );
-};
+  )
+}

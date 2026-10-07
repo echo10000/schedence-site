@@ -1,121 +1,89 @@
-"use client";
+'use client'
 
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { Logo } from "./Logo";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import React, { useState } from 'react'
+import Link from 'next/link'
+import { Menu, X } from 'lucide-react'
+import { btn } from '@/lib/ui'
+
+const NAV = [
+  { href: '#platform', label: 'Platform' },
+  { href: '#deployment', label: 'Deployment' },
+  { href: '#workflow', label: 'How it works' },
+  { href: '#explanations', label: 'Explanations' },
+  { href: '#about', label: 'About' },
+]
 
 export const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 12);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navLinks = [
-    { label: "Product", href: "#product" },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
-  ];
+  const [open, setOpen] = useState(false)
 
   return (
-    <header
-      className={`sticky top-0 z-50 w-full transition-all duration-200 ${
-        scrolled
-          ? "bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-sm"
-          : "bg-white/80 backdrop-blur-sm border-b border-slate-200/50"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <Logo />
-          </div>
+    <header className="sticky top-0 z-50 border-b border-line bg-page/90 backdrop-blur">
+      <div className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-5 sm:px-8">
+        <Link href="/" aria-label="Schedence home" className="flex items-center gap-2.5">
+          <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
+            <rect width="24" height="24" rx="6" className="fill-ink" />
+            <rect x="5" y="5" width="6" height="6" rx="1.5" className="fill-white" />
+            <rect x="13" y="5" width="6" height="6" rx="1.5" className="fill-white/40" />
+            <rect x="5" y="13" width="6" height="6" rx="1.5" className="fill-white/40" />
+            <rect x="13" y="13" width="6" height="6" rx="1.5" className="fill-brand" />
+          </svg>
+          <span className="text-[17px] font-semibold tracking-[-0.02em] text-ink">
+            Schedence
+          </span>
+        </Link>
 
-          {/* Desktop Navigation */}
-          <nav
-            aria-label="Main Navigation"
-            className="hidden md:flex items-center gap-8"
-          >
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded px-1.5 py-1"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center">
-            <a
-              href="mailto:echo@schedence.xyz?subject=Schedence%20Early%20Access"
-              className="inline-flex items-center justify-center gap-1.5 text-sm font-medium bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+        <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
+          {NAV.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-[14px] font-medium text-body transition-colors hover:text-ink"
             >
-              <span>Join Early Access</span>
-              <ArrowUpRight className="w-4 h-4 opacity-80" aria-hidden="true" />
-            </a>
-          </div>
+              {item.label}
+            </Link>
+          ))}
+        </nav>
 
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden">
-            <button
-              type="button"
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
-              aria-controls="mobile-menu"
-              aria-expanded={isOpen}
-              aria-label={isOpen ? "Close main menu" : "Open main menu"}
-            >
-              {isOpen ? (
-                <X className="block h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Menu className="block h-6 w-6" aria-hidden="true" />
-              )}
-            </button>
-          </div>
+        <div className="hidden md:block">
+          <Link href="#contact" className={btn('primary', 'sm')}>
+            Request a demo
+          </Link>
         </div>
+
+        <button
+          type="button"
+          className="-mr-2 inline-flex h-10 w-10 items-center justify-center rounded-md text-ink transition-colors hover:bg-sunken md:hidden"
+          aria-expanded={open}
+          aria-controls="mobile-nav"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
+        </button>
       </div>
 
-      {/* Mobile Menu Dropdown */}
-      {isOpen && (
-        <div
-          id="mobile-menu"
-          className="md:hidden border-b border-slate-200 bg-white shadow-lg animate-in slide-in-from-top-2 duration-150"
-        >
-          <div className="px-4 pt-3 pb-6 space-y-3">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="block text-base font-medium text-slate-700 hover:text-blue-700 hover:bg-slate-50 px-3 py-2 rounded-md transition-colors"
-              >
-                {link.label}
-              </a>
+      {open && (
+        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-line bg-page md:hidden">
+          <ul className="mx-auto max-w-[1200px] px-5 py-1 sm:px-8">
+            {NAV.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="flex h-12 items-center border-b border-line text-[15px] font-medium text-ink"
+                >
+                  {item.label}
+                </Link>
+              </li>
             ))}
-            <div className="pt-2">
-              <a
-                href="mailto:echo@schedence.xyz?subject=Schedence%20Early%20Access"
-                onClick={() => setIsOpen(false)}
-                className="w-full inline-flex items-center justify-center gap-2 text-sm font-medium bg-blue-700 hover:bg-blue-800 text-white px-4 py-2.5 rounded-lg shadow-sm transition-all"
-              >
-                <span>Join Early Access</span>
-                <ArrowUpRight className="w-4 h-4 opacity-80" aria-hidden="true" />
-              </a>
-            </div>
+          </ul>
+          <div className="px-5 pb-5 pt-4 sm:px-8">
+            <Link href="#contact" onClick={() => setOpen(false)} className={`${btn('primary')} w-full`}>
+              Request a demo
+            </Link>
           </div>
-        </div>
+        </nav>
       )}
     </header>
-  );
-};
+  )
+}
