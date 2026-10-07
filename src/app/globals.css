@@ -4,19 +4,34 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    --color-page: #FAFBFC;
+    --color-surface: #FFFFFF;
+    --color-sunken: #F3F5F8;
+    --color-ink: #0B1B33;
+    --color-body: #475569;
+    --color-muted: #5B6B82;
+    --color-line: #E2E8F0;
+    --color-line-strong: #CBD5E1;
+    --color-brand: #1F4FD8;
+    --color-brand-hover: #1A41B8;
+    --color-brand-subtle: #EEF3FE;
+    --color-brand-line: #C7D6FB;
+    --color-ok: #1F7A4D;
+    --color-ok-subtle: #EAF5EE;
+    --color-warn: #B45309;
+    --color-warn-subtle: #FEF3E2;
   }
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
 
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
     }
-    
+
     *,
     *::before,
     *::after {
@@ -28,6 +43,8 @@
   }
 
   body {
-    @apply bg-slate-50 text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900;
+    background-color: #FAFBFC;
+    color: #0B1B33;
+    @apply antialiased selection:bg-brand-subtle selection:text-brand;
   }
 }
