@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { ProblemSection } from "@/components/ProblemSection";
-import { FeaturesSection } from "@/components/FeaturesSection";
+import { Pillars } from "@/components/sections/pillars";
 import { ClaudeAssistanceSection } from "@/components/ClaudeAssistanceSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { AboutSection } from "@/components/AboutSection";
@@ -22,8 +22,8 @@ export default function HomePage() {
         {/* 3. Problem */}
         <ProblemSection />
 
-        {/* 4. Product / Features */}
-        <FeaturesSection />
+        {/* 4. Product / Pillars */}
+        <Pillars />
 
         {/* 5. AI / Claude Section */}
         <ClaudeAssistanceSection />
