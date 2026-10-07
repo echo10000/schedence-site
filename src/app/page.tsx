@@ -6,18 +6,19 @@ import { Pillars } from "@/components/sections/pillars";
 import { Deployment } from "@/components/sections/deployment";
 import { Workflow } from "@/components/sections/workflow";
 import { Explanations } from "@/components/sections/explanations";
+import { Roles } from "@/components/sections/roles";
 import { AboutSection } from "@/components/AboutSection";
-import { EarlyAccessSection } from "@/components/EarlyAccessSection";
+import { RequestDemo } from "@/components/sections/request-demo";
 import { Footer } from "@/components/Footer";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-900 overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-page text-ink overflow-x-hidden">
       {/* 1. Navbar */}
       <Navbar />
 
       <main className="flex-1">
-        {/* 2. Hero */}
+        {/* 2. Hero & Capability Strip */}
         <Hero />
 
         {/* 3. Problem */}
@@ -32,17 +33,20 @@ export default function HomePage() {
         {/* 6. Product Workflow */}
         <Workflow />
 
-        {/* 7. AI / Scheduling Explanations */}
+        {/* 7. AI-Assisted Scheduling Explanations */}
         <Explanations />
 
-        {/* 7. About */}
+        {/* 8. For Colleges & Universities (Roles) */}
+        <Roles />
+
+        {/* 9. About Schedence */}
         <AboutSection />
 
-        {/* 8. Early Access / Contact */}
-        <EarlyAccessSection />
+        {/* 10. Request Demo / Quotation CTA */}
+        <RequestDemo />
       </main>
 
-      {/* 9. Footer */}
+      {/* 11. Footer */}
       <Footer />
     </div>
   );

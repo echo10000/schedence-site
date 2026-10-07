@@ -1,69 +1,68 @@
-import React from "react";
-import Link from "next/link";
-import { Logo } from "./Logo";
+import React from 'react'
+import Link from 'next/link'
+import { Container } from '@/components/ui/container'
+
+const GROUPS = [
+  {
+    title: 'Product',
+    links: [
+      { label: 'Platform', href: '#platform' },
+      { label: 'Deployment', href: '#deployment' },
+      { label: 'How it works', href: '#workflow' },
+      { label: 'Explanations', href: '#explanations' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { label: 'About', href: '#about' },
+      { label: 'Request a demo', href: '#contact' },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { label: 'Privacy', href: '/privacy' },
+      { label: 'Terms', href: '/terms' },
+    ],
+  },
+]
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-white border-t border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-slate-200/80">
-          <div className="space-y-2">
-            <Logo />
-            <p className="text-sm text-slate-600 max-w-sm">
-              Academic scheduling and faculty workload management.
+    <footer className="border-t border-line bg-surface">
+      <Container className="py-14 lg:py-16">
+        <div className="grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <p className="text-[17px] font-semibold tracking-[-0.02em] text-ink">Schedence</p>
+            <p className="mt-3 max-w-[32ch] text-[14px] leading-6 text-body">
+              Academic scheduling and faculty workload software for colleges and universities.
             </p>
           </div>
-
-          <div className="flex flex-wrap items-center gap-6 sm:gap-8 text-sm">
-            <a
-              href="/#product"
-              className="text-slate-600 hover:text-slate-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
-            >
-              Product
-            </a>
-            <a
-              href="/#about"
-              className="text-slate-600 hover:text-slate-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
-            >
-              About
-            </a>
-            <a
-              href="/#contact"
-              className="text-slate-600 hover:text-slate-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
-            >
-              Contact
-            </a>
-            <Link
-              href="/privacy"
-              className="text-slate-600 hover:text-slate-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
-            >
-              Privacy
-            </Link>
-            <Link
-              href="/terms"
-              className="text-slate-600 hover:text-slate-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
-            >
-              Terms
-            </Link>
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-7">
+            {GROUPS.map((g) => (
+              <nav key={g.title} aria-label={g.title}>
+                <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-muted">{g.title}</p>
+                <ul className="mt-4 space-y-3">
+                  {g.links.map((l) => (
+                    <li key={l.label}>
+                      <Link
+                        href={l.href}
+                        className="text-[14px] text-body transition-colors hover:text-ink"
+                      >
+                        {l.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ))}
           </div>
         </div>
-
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600 font-mono">
-          <div>
-            © 2026 Schedence. All rights reserved.
-          </div>
-          <div className="flex items-center gap-4">
-            <span>Domain: schedence.xyz</span>
-            <span>•</span>
-            <a
-              href="mailto:echo@schedence.xyz"
-              className="hover:text-blue-700 transition-colors underline underline-offset-2"
-            >
-              echo@schedence.xyz
-            </a>
-          </div>
+        <div className="mt-12 border-t border-line pt-6 text-[13px] text-muted">
+          © {new Date().getFullYear()} Schedence. All rights reserved.
         </div>
-      </div>
+      </Container>
     </footer>
-  );
-};
+  )
+}
