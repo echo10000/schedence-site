@@ -16,16 +16,16 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://schedence.xyz"),
-  title: "Schedence — Academic Scheduling & Faculty Workload Management",
+  title: "Schedence — Academic Scheduling & Faculty Workload Software",
   description:
-    "Schedence helps higher-education institutions manage faculty workloads, scheduling constraints, timetable generation, and academic scheduling conflicts.",
+    "Schedence generates timetables and manages faculty workloads against your institution's own rules, including availability, room constraints and designation load reductions. Conflicts are flagged before a schedule is published.",
   keywords: [
     "academic scheduling",
     "faculty workload management",
     "timetable generation",
     "university scheduling software",
+    "higher education scheduling",
     "course timetable solver",
-    "higher ed edtech",
     "classroom allocation",
     "curriculum scheduling"
   ],
@@ -42,23 +42,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://schedence.xyz",
     siteName: "Schedence",
-    title: "Schedence — Academic Scheduling & Faculty Workload Management",
+    title: "Schedence — Academic Scheduling & Faculty Workload Software",
     description:
-      "Schedence helps higher-education institutions manage faculty workloads, scheduling constraints, timetable generation, and academic scheduling conflicts.",
+      "Schedence generates timetables and manages faculty workloads against your institution's own rules. Conflicts are flagged before a schedule is published.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Schedence — Academic Scheduling & Faculty Workload Management",
+        alt: "Schedence — Academic Scheduling & Faculty Workload Software",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Schedence — Academic Scheduling & Faculty Workload Management",
+    title: "Schedence — Academic Scheduling & Faculty Workload Software",
     description:
-      "Schedence helps higher-education institutions manage faculty workloads, scheduling constraints, timetable generation, and academic scheduling conflicts.",
+      "Schedence generates timetables and manages faculty workloads against your institution's own rules. Conflicts are flagged before a schedule is published.",
   },
   robots: {
     index: true,
