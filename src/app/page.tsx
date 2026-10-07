@@ -3,8 +3,9 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { ProblemSection } from "@/components/ProblemSection";
 import { Pillars } from "@/components/sections/pillars";
+import { Deployment } from "@/components/sections/deployment";
+import { Workflow } from "@/components/sections/workflow";
 import { ClaudeAssistanceSection } from "@/components/ClaudeAssistanceSection";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { AboutSection } from "@/components/AboutSection";
 import { EarlyAccessSection } from "@/components/EarlyAccessSection";
 import { Footer } from "@/components/Footer";
@@ -25,11 +26,14 @@ export default function HomePage() {
         {/* 4. Product / Pillars */}
         <Pillars />
 
-        {/* 5. AI / Claude Section */}
-        <ClaudeAssistanceSection />
+        {/* 5. Institutional Deployment */}
+        <Deployment />
 
-        {/* 6. How It Works */}
-        <HowItWorksSection />
+        {/* 6. Product Workflow */}
+        <Workflow />
+
+        {/* 7. AI / Claude Section */}
+        <ClaudeAssistanceSection />
 
         {/* 7. About */}
         <AboutSection />
