@@ -5,7 +5,7 @@ import { ProblemSection } from "@/components/ProblemSection";
 import { Pillars } from "@/components/sections/pillars";
 import { Deployment } from "@/components/sections/deployment";
 import { Workflow } from "@/components/sections/workflow";
-import { ClaudeAssistanceSection } from "@/components/ClaudeAssistanceSection";
+import { Explanations } from "@/components/sections/explanations";
 import { AboutSection } from "@/components/AboutSection";
 import { EarlyAccessSection } from "@/components/EarlyAccessSection";
 import { Footer } from "@/components/Footer";
@@ -32,8 +32,8 @@ export default function HomePage() {
         {/* 6. Product Workflow */}
         <Workflow />
 
-        {/* 7. AI / Claude Section */}
-        <ClaudeAssistanceSection />
+        {/* 7. AI / Scheduling Explanations */}
+        <Explanations />
 
         {/* 7. About */}
         <AboutSection />
