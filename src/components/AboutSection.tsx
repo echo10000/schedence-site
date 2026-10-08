@@ -4,7 +4,7 @@ import { Eyebrow } from '@/components/ui/eyebrow'
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="bg-page py-20 lg:py-28">
+    <section id="about" className="bg-page py-16 lg:py-20">
       <Container>
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-5">

@@ -27,7 +27,7 @@ const PROBLEMS = [
 
 export const ProblemSection: React.FC = () => {
   return (
-    <section className="border-b border-line bg-page py-20 lg:py-28">
+    <section className="border-b border-line bg-page py-16 lg:py-24">
       <Container>
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-14">
           {/* Left Column: Heading, sticky on desktop */}

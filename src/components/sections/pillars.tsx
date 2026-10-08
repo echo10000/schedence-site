@@ -48,7 +48,7 @@ const PILLARS: {
 
 export const Pillars: React.FC = () => {
   return (
-    <section id="platform" className="bg-page py-20 lg:py-28">
+    <section id="platform" className="bg-page py-16 lg:py-24">
       <Container>
         <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">

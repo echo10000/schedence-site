@@ -4,9 +4,9 @@ import { Eyebrow } from '@/components/ui/eyebrow'
 
 export const RequestDemo: React.FC = () => {
   return (
-    <section id="contact" className="bg-page py-20 lg:py-28">
+    <section id="contact" className="bg-page py-16 lg:py-20">
       <div className="mx-auto w-full max-w-[960px] px-5 sm:px-8">
-        <div className="rounded-xl border border-line bg-surface px-6 py-12 text-center shadow-card sm:px-12 sm:py-16">
+        <div className="rounded-xl border border-line bg-surface px-6 py-10 text-center shadow-card sm:px-12 sm:py-14">
           <div className="flex justify-center">
             <Eyebrow>Request a demo</Eyebrow>
           </div>
@@ -32,7 +32,7 @@ export const RequestDemo: React.FC = () => {
             </a>
           </div>
           <p className="mt-6 text-[13px] text-muted">
-            Direct inquiry: echo@schedence.xyz · Typical response within one business day.
+            Direct inquiry: echo@schedence.xyz · We review institutional scheduling requirements directly.
           </p>
         </div>
       </div>

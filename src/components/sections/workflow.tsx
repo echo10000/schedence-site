@@ -26,7 +26,7 @@ const STEPS = [
 
 export const Workflow: React.FC = () => {
   return (
-    <section id="workflow" className="bg-ink py-20 text-white lg:py-28">
+    <section id="workflow" className="bg-ink py-16 text-white lg:py-24">
       <Container>
         <p className="font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-slate-400">
           How it works

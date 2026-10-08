@@ -43,7 +43,7 @@ const STEPS = [
 
 export const Explanations: React.FC = () => {
   return (
-    <section id="explanations" className="bg-page py-20 lg:py-28">
+    <section id="explanations" className="bg-page py-16 lg:py-24">
       <Container>
         <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-5">
@@ -65,8 +65,7 @@ export const Explanations: React.FC = () => {
             </p>
             <p className="mt-6 flex items-start gap-2 text-[13px] leading-5 text-muted">
               <Info className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
-              Claude-assisted explanations are in development and are not yet part
-              of production deployments.
+              Claude-assisted explanations are in development.
             </p>
           </div>
 

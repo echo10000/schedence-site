@@ -40,7 +40,7 @@ export const TimetablePreview: React.FC = () => {
           </span>
         </div>
 
-        <div className="grid md:grid-cols-[1fr_200px]">
+        <div className="grid md:grid-cols-[1fr_210px] lg:grid-cols-[1fr_215px]">
           <div className="p-3 sm:p-4">
             <div className="grid grid-cols-[32px_repeat(3,1fr)] gap-x-1 sm:grid-cols-[36px_repeat(5,1fr)]">
               <div />
@@ -88,8 +88,8 @@ export const TimetablePreview: React.FC = () => {
                       }`}
                       style={{ top: (b.start - START_HOUR) * ROW + 1, height: b.dur * ROW - 2 }}
                     >
-                      <p className="truncate text-[11px] font-medium leading-4 text-ink">{b.code}</p>
-                      <p className="truncate font-mono text-[10px] leading-4 text-body">{b.room}</p>
+                      <p className="text-[11px] font-medium leading-tight text-ink">{b.code}</p>
+                      <p className="mt-0.5 font-mono text-[10px] leading-tight text-body">{b.room}</p>
                     </div>
                   ))}
                 </div>
@@ -97,15 +97,30 @@ export const TimetablePreview: React.FC = () => {
             </div>
           </div>
 
-          <aside className="border-t border-line bg-sunken p-4 md:border-l md:border-t-0">
-            <p className="font-mono text-[10px] uppercase tracking-[0.08em] text-muted">Conflicts · 1</p>
-            <div className="mt-3 rounded-md border border-warn/30 bg-surface p-3">
-              <p className="flex items-center gap-1.5 text-[12px] font-medium text-warn">
-                <TriangleAlert className="h-3.5 w-3.5" aria-hidden />
-                Room requirement
-              </p>
-              <p className="mt-1.5 text-[12px] leading-[1.5] text-body">
-                CS 301 · Tue, Thu 9:00. Assigned room is not a laboratory.
+          <aside className="flex flex-col justify-between border-t border-line bg-sunken p-4 md:border-l md:border-t-0">
+            <div>
+              <div className="flex items-center justify-between">
+                <p className="font-mono text-[10px] uppercase tracking-[0.08em] text-muted">Conflict review</p>
+                <span className="rounded bg-warn/15 px-1.5 py-0.5 font-mono text-[10px] font-medium text-warn">
+                  1 rule flag
+                </span>
+              </div>
+              <div className="mt-3 rounded-md border border-warn/30 bg-surface p-3">
+                <p className="flex items-center gap-1.5 text-[12px] font-semibold text-warn">
+                  <TriangleAlert className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                  Room requirement
+                </p>
+                <p className="mt-1.5 text-[12px] leading-[1.45] text-ink">
+                  <span className="font-medium">CS 301</span> (Tue, Thu 9:00) assigned to <span className="font-mono text-[11px]">RM 204</span>.
+                </p>
+                <p className="mt-1.5 text-[11px] leading-[1.45] text-body">
+                  Subject rule requires a laboratory. RM 204 is designated as a lecture room.
+                </p>
+              </div>
+            </div>
+            <div className="mt-3 border-t border-line/60 pt-2.5">
+              <p className="font-mono text-[10px] leading-relaxed text-muted">
+                Illustrative resolution: reassign to an open laboratory or adjust timeslot before publishing.
               </p>
             </div>
           </aside>

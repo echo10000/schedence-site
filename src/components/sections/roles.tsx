@@ -23,7 +23,7 @@ const ROLES = [
 
 export const Roles: React.FC = () => {
   return (
-    <section className="border-y border-line bg-surface py-20 lg:py-28">
+    <section className="border-y border-line bg-surface py-16 lg:py-24">
       <Container>
         <div className="max-w-[34rem]">
           <Eyebrow>For colleges and universities</Eyebrow>
@@ -32,7 +32,7 @@ export const Roles: React.FC = () => {
           </h2>
         </div>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:mt-16">
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4">
           {ROLES.map((r) => (
             <div key={r.role} className="border-t border-line pt-6">
               <h3 className="text-[17px] font-semibold tracking-[-0.01em] text-ink">

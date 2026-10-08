@@ -14,21 +14,21 @@ const SCOPE = [
 export const Hero: React.FC = () => {
   return (
     <section className="border-b border-line bg-page">
-      <div className="mx-auto grid w-full max-w-[1200px] gap-12 px-5 pb-16 pt-12 sm:px-8 sm:pt-16 lg:grid-cols-12 lg:items-center lg:gap-12 lg:pb-24 lg:pt-24">
+      <div className="mx-auto grid w-full max-w-[1200px] gap-10 px-5 pb-12 pt-10 sm:px-8 sm:pt-14 lg:grid-cols-12 lg:items-center lg:gap-12 lg:pb-20 lg:pt-20">
         <div className="lg:col-span-5">
           <p className="text-[13px] font-medium text-brand">
             Academic scheduling and faculty workload software
           </p>
-          <h1 className="mt-5 text-balance text-[38px] font-semibold leading-[1.06] tracking-[-0.03em] text-ink sm:text-5xl lg:text-[46px] xl:text-[50px]">
-            Academic scheduling software built around your institution.
+          <h1 className="mt-4 text-balance text-[34px] font-semibold leading-[1.1] tracking-[-0.03em] text-ink sm:text-[44px] lg:text-[42px] xl:text-[46px]">
+            Academic scheduling, built around your institution.
           </h1>
-          <p className="mt-6 max-w-[34rem] text-[17px] leading-[1.65] text-body lg:text-[18px]">
+          <p className="mt-5 text-[16px] leading-[1.6] text-body sm:text-[17px]">
             Schedence generates timetables and manages faculty workloads against
             your institution&apos;s own rules, including availability, room
             constraints and designation load reductions. Conflicts are flagged
             before a schedule is published.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="#contact" className={btn('primary')}>
               Request a demo
               <ArrowRight className="h-4 w-4" aria-hidden />
@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
               See how it works
             </Link>
           </div>
-          <p className="mt-6 text-[13px] text-muted">
+          <p className="mt-5 text-[13px] text-muted">
             Each institution is deployed separately and privately.
           </p>
         </div>

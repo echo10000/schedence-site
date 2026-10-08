@@ -9,7 +9,6 @@ const NAV = [
   { href: '#platform', label: 'Platform' },
   { href: '#deployment', label: 'Deployment' },
   { href: '#workflow', label: 'How it works' },
-  { href: '#explanations', label: 'Explanations' },
   { href: '#about', label: 'About' },
 ]
 
@@ -32,7 +31,7 @@ export const Navbar: React.FC = () => {
           </span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
           {NAV.map((item) => (
             <Link
               key={item.href}
@@ -44,7 +43,7 @@ export const Navbar: React.FC = () => {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Link href="#contact" className={btn('primary', 'sm')}>
             Request a demo
           </Link>
@@ -52,7 +51,7 @@ export const Navbar: React.FC = () => {
 
         <button
           type="button"
-          className="-mr-2 inline-flex h-10 w-10 items-center justify-center rounded-md text-ink transition-colors hover:bg-sunken md:hidden"
+          className="-mr-2 inline-flex h-10 w-10 items-center justify-center rounded-md text-ink transition-colors hover:bg-sunken lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? 'Close menu' : 'Open menu'}
@@ -63,7 +62,7 @@ export const Navbar: React.FC = () => {
       </div>
 
       {open && (
-        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-line bg-page md:hidden">
+        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-line bg-page lg:hidden">
           <ul className="mx-auto max-w-[1200px] px-5 py-1 sm:px-8">
             {NAV.map((item) => (
               <li key={item.href}>
