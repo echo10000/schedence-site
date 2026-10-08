@@ -32,7 +32,14 @@ export const RequestDemo: React.FC = () => {
             </a>
           </div>
           <p className="mt-6 text-[13px] text-muted">
-            Direct inquiry: echo@schedence.xyz · We review institutional scheduling requirements directly.
+            Direct inquiry:{' '}
+            <a
+              href="mailto:echo@schedence.xyz"
+              className="font-medium text-ink underline underline-offset-2 transition-colors hover:text-brand"
+            >
+              echo@schedence.xyz
+            </a>{' '}
+            · We review institutional scheduling requirements directly.
           </p>
         </div>
       </div>

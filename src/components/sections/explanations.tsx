@@ -53,10 +53,9 @@ export const Explanations: React.FC = () => {
             </h2>
             <p className="mt-5 text-[17px] leading-[1.65] text-body">
               When a timetable changes or a conflict appears, administrators need
-              more than an error code. Schedence&apos;s scheduling engine produces
-              the result. Claude, Anthropic&apos;s AI model, helps turn that result
-              into a plain-language explanation your staff can read, question and
-              act on.
+              more than an error code. Schedence is exploring Claude to help
+              translate scheduling conflicts, workload constraints, and timetable
+              decisions into clear natural-language explanations.
             </p>
             <p className="mt-4 text-[17px] leading-[1.65] text-body">
               Claude does not generate or alter timetables. Explanations are

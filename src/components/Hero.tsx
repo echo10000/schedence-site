@@ -38,7 +38,7 @@ export const Hero: React.FC = () => {
             </Link>
           </div>
           <p className="mt-5 text-[13px] text-muted">
-            Each institution is deployed separately and privately.
+            Designed for private, institution-specific deployments.
           </p>
         </div>
 

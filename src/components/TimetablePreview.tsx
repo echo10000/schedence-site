@@ -17,10 +17,10 @@ type Block = {
 
 const BLOCKS: Block[] = [
   { day: 0, start: 7.5, dur: 1.5, code: 'CS 101', room: 'RM 204' },
-  { day: 0, start: 10, dur: 2, code: 'CS 214 Lab', room: 'LAB 1' },
+  { day: 0, start: 10, dur: 2, code: 'CS 214', room: 'LAB 1' },
   { day: 1, start: 9, dur: 1.5, code: 'CS 301', room: 'RM 204', conflict: true },
   { day: 2, start: 7.5, dur: 1.5, code: 'CS 101', room: 'RM 204' },
-  { day: 2, start: 10, dur: 2, code: 'CS 214 Lab', room: 'LAB 1' },
+  { day: 2, start: 10, dur: 2, code: 'CS 214', room: 'LAB 1' },
   { day: 3, start: 9, dur: 1.5, code: 'CS 301', room: 'RM 204', conflict: true },
 ]
 
@@ -42,13 +42,13 @@ export const TimetablePreview: React.FC = () => {
 
         <div className="grid md:grid-cols-[1fr_210px] lg:grid-cols-[1fr_215px]">
           <div className="p-3 sm:p-4">
-            <div className="grid grid-cols-[32px_repeat(3,1fr)] gap-x-1 sm:grid-cols-[36px_repeat(5,1fr)]">
+            <div className="grid grid-cols-[32px_repeat(3,1fr)] gap-x-1 sm:grid-cols-[36px_repeat(4,1fr)] xl:grid-cols-[36px_repeat(5,1fr)]">
               <div />
               {DAYS.map((d, i) => (
                 <p
                   key={d}
                   className={`pb-2 text-center font-mono text-[10px] uppercase tracking-[0.08em] text-muted ${
-                    i > 2 ? 'hidden sm:block' : ''
+                    i === 4 ? 'hidden xl:block' : i === 3 ? 'hidden sm:block' : ''
                   }`}
                 >
                   {d}
@@ -70,7 +70,9 @@ export const TimetablePreview: React.FC = () => {
               {DAYS.map((d, di) => (
                 <div
                   key={d}
-                  className={`relative border-l border-line ${di > 2 ? 'hidden sm:block' : ''}`}
+                  className={`relative border-l border-line ${
+                    di === 4 ? 'hidden xl:block' : di === 3 ? 'hidden sm:block' : ''
+                  }`}
                   style={{
                     height: HOURS.length * ROW,
                     backgroundImage: `repeating-linear-gradient(to bottom, transparent 0, transparent ${
@@ -88,8 +90,8 @@ export const TimetablePreview: React.FC = () => {
                       }`}
                       style={{ top: (b.start - START_HOUR) * ROW + 1, height: b.dur * ROW - 2 }}
                     >
-                      <p className="text-[11px] font-medium leading-tight text-ink">{b.code}</p>
-                      <p className="mt-0.5 font-mono text-[10px] leading-tight text-body">{b.room}</p>
+                      <p className="truncate text-[11px] font-medium leading-tight text-ink">{b.code}</p>
+                      <p className="mt-0.5 truncate font-mono text-[10px] leading-tight text-body">{b.room}</p>
                     </div>
                   ))}
                 </div>

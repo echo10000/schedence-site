@@ -89,7 +89,7 @@ export const Deployment: React.FC = () => {
             <p className="mt-5 max-w-[34rem] text-[17px] leading-[1.65] text-body">
               Every institution has its own rules: which rooms support which
               subjects, how designations reduce teaching load, who reviews a
-              schedule before it is published. Schedence is deployed separately
+              schedule before it is published. Schedence is designed to be deployed separately
               for each institution and configured around those rules.
             </p>
 

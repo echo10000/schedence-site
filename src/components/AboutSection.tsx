@@ -16,16 +16,10 @@ export const AboutSection: React.FC = () => {
 
           <div className="space-y-5 text-[17px] leading-[1.65] text-body lg:col-span-7 lg:pt-9 lg:text-[18px]">
             <p>
-              Schedence is an early-stage software company focused on one problem:
-              academic scheduling and faculty workload at colleges and universities.
-              We build the scheduling technology and deploy it separately for each
-              institution.
+              Schedence is an early-stage software company focused on solving a single, persistent problem: academic scheduling and faculty workload in higher education.
             </p>
             <p>
-              Our approach is informed by real academic scheduling challenges.
-              We design around the way institutions actually schedule, including room
-              constraints, availability, designations and review, instead of asking
-              institutions to adapt to a fixed template.
+              The platform grew directly from work on real academic scheduling challenges—balancing instructor availability, laboratory and room requirements, faculty designations, and timetable conflicts across departments. Instead of asking institutions to conform to a rigid template, we build configurable scheduling technology designed around each institution&apos;s own rules and review processes.
             </p>
           </div>
         </div>
