@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
             before a schedule is published.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="#contact" className={btn('primary')}>
+            <Link href="/?inquiry=demo#contact" className={btn('primary')}>
               Request a demo
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>

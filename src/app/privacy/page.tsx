@@ -51,18 +51,18 @@ export default function PrivacyPage() {
           <section className="space-y-3">
             <h2 className="text-[20px] font-semibold text-ink">2. Information We Collect</h2>
             <p>
-              Because Schedence is currently an early-stage company without public user self-registration or database accounts on this marketing website, data collection is strictly minimal:
+              Because Schedence is currently an early-stage company without public user accounts on this marketing website, data collection is strictly minimal:
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong className="text-ink">Direct Communications:</strong> When you contact us via email at{" "}
+                <strong className="text-ink">Institutional Inquiries &amp; Direct Communications:</strong> When you submit an inquiry through our website form or contact us via email at{" "}
                 <a
                   href="mailto:echo@schedence.xyz"
                   className="text-brand underline underline-offset-2 hover:text-brand-hover"
                 >
                   echo@schedence.xyz
-                </a>{" "}
-                or request a demonstration, we collect your name, institutional email address, university affiliation, and the contents of your message.
+                </a>
+                , we collect the details you provide: your full name, institution or organization name, work email address, role or position (if provided), inquiry type, and the message describing your scheduling requirements.
               </li>
               <li>
                 <strong className="text-ink">Technical Log Data:</strong> Like most web servers, our hosting infrastructure may temporarily process standard technical request information (such as IP addresses, browser user agent, and page timestamps) strictly for server diagnostics, security monitoring, and uptime maintenance.
@@ -84,23 +84,23 @@ export default function PrivacyPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-[20px] font-semibold text-ink">4. Academic & Institutional Data</h2>
+            <h2 className="text-[20px] font-semibold text-ink">4. Academic &amp; Institutional Data</h2>
             <p>
               Any academic datasets, sample course catalogs, or faculty constraint documents shared during exploratory requirements and demonstration discussions are treated as strictly confidential and will never be shared publicly or used beyond evaluating scheduling solver requirements.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-[20px] font-semibold text-ink">5. Data Retention & Security</h2>
+            <h2 className="text-[20px] font-semibold text-ink">5. Data Retention &amp; Security</h2>
             <p>
               We retain correspondence only as long as necessary to facilitate ongoing communication with interested institutions. We implement reasonable physical, technical, and administrative safeguards to protect any received communications.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-[20px] font-semibold text-ink">6. Third-Party Hosting</h2>
+            <h2 className="text-[20px] font-semibold text-ink">6. Third-Party Infrastructure &amp; Email Delivery</h2>
             <p>
-              Our website is hosted on modern cloud infrastructure (such as Vercel). These providers handle network traffic in compliance with industry-standard privacy and security protocols.
+              Our website is hosted on modern cloud infrastructure (Vercel). Inquiries submitted through our website form are relayed to our team email using a transactional email delivery service (such as Resend). These providers process transmission data strictly to relay messages to echo@schedence.xyz in accordance with their privacy and security standards.
             </p>
           </section>
 

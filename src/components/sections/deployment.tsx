@@ -106,7 +106,7 @@ export const Deployment: React.FC = () => {
             </ul>
 
             <Link
-              href="#contact"
+              href="/?inquiry=requirements#contact"
               className="group mt-8 inline-flex items-center gap-2 text-[15px] font-medium text-brand hover:text-brand-hover"
             >
               Discuss your requirements

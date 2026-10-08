@@ -44,7 +44,7 @@ export const Navbar: React.FC = () => {
         </nav>
 
         <div className="hidden lg:block">
-          <Link href="#contact" className={btn('primary', 'sm')}>
+          <Link href="/?inquiry=demo#contact" className={btn('primary', 'sm')}>
             Request a demo
           </Link>
         </div>
@@ -77,7 +77,7 @@ export const Navbar: React.FC = () => {
             ))}
           </ul>
           <div className="px-5 pb-5 pt-4 sm:px-8">
-            <Link href="#contact" onClick={() => setOpen(false)} className={`${btn('primary')} w-full`}>
+            <Link href="/?inquiry=demo#contact" onClick={() => setOpen(false)} className={`${btn('primary')} w-full`}>
               Request a demo
             </Link>
           </div>
