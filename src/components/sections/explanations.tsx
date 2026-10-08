@@ -58,9 +58,10 @@ export const Explanations: React.FC = () => {
               decisions into clear natural-language explanations.
             </p>
             <p className="mt-4 text-[17px] leading-[1.65] text-body">
-              Claude does not generate or alter timetables. Explanations are
-              drafted from the engine&apos;s own output, and an administrator
-              makes the decision.
+              In the planned integration, Claude would explain structured results
+              from Schedence&apos;s scheduling engine rather than generate or change
+              timetables. Academic administrators would remain responsible for
+              reviewing and approving decisions.
             </p>
             <p className="mt-6 flex items-start gap-2 text-[13px] leading-5 text-muted">
               <Info className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
